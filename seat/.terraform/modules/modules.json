@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"key_pair","Source":"terraform-aws-modules/key-pair/aws","Version":"1.0.0","Dir":".terraform/modules/key_pair"}]}

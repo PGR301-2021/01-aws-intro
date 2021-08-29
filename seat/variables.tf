@@ -7,6 +7,6 @@ variable "ami" {
   type = string
 }
 
-variable "students" {
-  type = list
+variable "student_id" {
+  type = string
 }

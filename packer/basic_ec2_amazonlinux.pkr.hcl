@@ -1,7 +1,7 @@
 source "amazon-ebs" "basic-example" {
   region =  "eu-north-1"
-  source_ami =  "ami-0223e7391593c3843"
-  instance_type =  "t2.micro"
+  source_ami =  "ami-0d441f5643da997cb"
+  instance_type =  "t3.medium"
   ssh_username =  "ubuntu"
   ami_name =  "packer_tag_example {{timestamp}}"
   tags = {
