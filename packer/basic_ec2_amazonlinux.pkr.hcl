@@ -17,3 +17,8 @@ build {
     "source.amazon-ebs.basic-example"
   ]
 }
+
+provisioner "file" {
+  source = "packer/boto3_example.py"
+  destination = "boto3_example.py"
+} 
