@@ -1,5 +1,5 @@
 source "amazon-ebs" "basic-example" {
-  region =  "us-east-1"
+  region =  "eu-north-1"
   source_ami =  "ami-fce3c696"
   instance_type =  "t2.micro"
   ssh_username =  "ubuntu"
