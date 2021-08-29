@@ -1,0 +1,29 @@
+env:
+  global:
+  - AWS_REGION=eu-north-1
+  - tf_version=0.12.19
+  - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+  - secure: PaT4O2p96Yr7qpyKnDjFFOQqCOBm/CIxYzpImEpkY/6jpGG/NnumKGqEA9YryPTEqateiJHXj8r/og+XACKLd9R+e6ChmugA2CczNx5rx3lJOCbmQcAgtqxC8QxPPV0LnYaElZxD5OTcEta/aH1RGCZzlWSIxgTa4Oeg1GsP5O9HoXOC8u9886aof+3WUZrXCrB4QRH2BOVSFEQHPjMBsM0xbxZqgsOlyl6TGYxvo7OYV3l1Ps8bnGdY/SSdNElhiQfMG6Err9RKRly/YAUei3RqyT60Hh70IYTd/fqy8ZJECMMEGvYRBysX4Br4drj1mqIdNWcN423xnTe0sJxsTicBiHAAipFmBU5b8+cMuhmcHqhoeNdPwZSFUtmoOiZkQwINWw6QKq27cHmmF+NuAXb2nn7pe73F8pyv5jZY65zH2YKnaI0GWpVZAk0ocg1n+UCKsTMEkh2Ch0AWPpqkLAPyC6XAmdgZNBvet30ml1uOXqk63LaCgZMV9xRuzrkhqJ0EqqInYpqw5YWGsPd+hKJdXujYBXvVLeR0M9Ej+3Z/9/vvjOYOu7lWQvRlvbkZ1yjP9Cqs3ePFduKTKiEdUTbfwj4KrrKOKch5zxureGey7HEqTc39zJhoMUbBknHukik5jlOYdEuJt7YiH0YxuIlLhFE6E/rDP9sB9WU2lBY=
+  - secure: hQSG6QSWPmRaEa0sLGNIZzaV/9zb7z8l5yawGffSeziozzQFHgGJLQ/etEnS9t8eeHNxl3IYeERN0FtQ9cGb92I/ou1GtBnDHkEWZj6hOGsDEt6+D6sYRe4Ae8jLI0jhPc8AvBxJsYZKUr0MC4QfP9OeEjJmT7xPo8+YgU2dJNE7hXqA/ORyLT/9TGZgZGdih2Ljes7BVmBeoOCwgpD/AdxT+pL54dad+SwmB5WSTPXmtlDI2Ocj04ldtlzCA1ZEA7jZjVJAV+tkZDVyNjdsQlMAjJmXzBJ5OZbwu5JAILMkwOlB7bTcDc8+zTD2QXj0xuNoMCq5o2qk3vuObJ5XPi/rtozsULQjbCBAEpd8PLnu5+5zgIMtm/u4VE4qZIdAq9dOduLamdbSQAygmqIq2n2QBXIcLaSNZjTS8rzOXiliPP5rkRGwYe0l/ONTZCvFsQqqeTUiwr/IvhSZQiWK7elOW05zt9SDgovsyC0fePir4kcyPYYHsIZB3WyTdB75ahHNWvETRfvk8mbGMSSEXWtB+lDGtBsQIPauIKrQXZN4vmQ9/iMp4IKK6VqWo5CvuFLBzVWwDHx/hkLoLOjE+VbwHb8v4FzBifn1vJVzElzkqCStOSrMuMJf05pYhCVLXqITZBk74Bmy657dwf168hQ061ggFlmYowQYt0b/xa8=
+branches:
+  only:
+  - main
+before_install:
+- openssl aes-256-cbc -K $encrypted_fe06a949a2b7_key -iv $encrypted_fe06a949a2b7_iv
+  -in gkey.json.enc -out gkey.json -d
+- curl https://sdk.cloud.google.com | bash > /dev/null
+- source "$HOME/google-cloud-sdk/path.bash.inc"
+- gcloud auth activate-service-account --key-file=gkey.json
+- gcloud config set project "${GCP_PROJECT_ID}"
+- export GOOGLE_APPLICATION_CREDENTIALS=./gkey.json
+- wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
+- unzip terraform_"$tf_version"_linux_amd64.zip
+- sudo mv terraform /usr/local/bin/
+- rm terraform_"$tf_version"_linux_amd64.zip
+install: true
+script:
+- |-
+  set -ex;
+  terraform init
+  terraform plan
+  terraform apply --auto-approve
