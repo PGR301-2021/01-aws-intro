@@ -8,22 +8,14 @@ env:
 branches:
   only:
   - main
-before_install:
-- openssl aes-256-cbc -K $encrypted_fe06a949a2b7_key -iv $encrypted_fe06a949a2b7_iv
-  -in gkey.json.enc -out gkey.json -d
-- curl https://sdk.cloud.google.com | bash > /dev/null
-- source "$HOME/google-cloud-sdk/path.bash.inc"
-- gcloud auth activate-service-account --key-file=gkey.json
-- gcloud config set project "${GCP_PROJECT_ID}"
-- export GOOGLE_APPLICATION_CREDENTIALS=./gkey.json
-- wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
-- unzip terraform_"$tf_version"_linux_amd64.zip
-- sudo mv terraform /usr/local/bin/
-- rm terraform_"$tf_version"_linux_amd64.zip
+before_script:
+- curl -L https://releases.hashicorp.com/packer/1.7.4/packer_1.7.4_linux_amd64.zip -o /tmp/packer.zip
+- sudo unzip -o -d /usr/local/bin /tmp/packer.zip
+- sudo chmod +x /usr/local/bin/packer
+
 install: true
 script:
 - |-
   set -ex;
-  terraform init
-  terraform plan
-  terraform apply --auto-approve
+  packer version
+  packer build basic_ec2_amazonlinux.pkr.hcl
