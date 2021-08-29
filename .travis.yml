@@ -18,4 +18,4 @@ script:
 - |-
   set -ex;
   packer version
-  packer build basic_ec2_amazonlinux.pkr.hcl
+  packer build packer/basic_ec2_amazonlinux.pkr.hcl
