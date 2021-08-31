@@ -1,7 +1,7 @@
 module "students" {
   source = "../seat"
-  for_each = var.student
-  email = each.value.email
+  ami = "ami-0fce25857d9f86070"
+  for_each = var.students
   student_id = each.key
 }
 

@@ -16,7 +16,7 @@ build {
 
   provisioner "file" {
     source = "packer/boto3_example.py"
-    destination = "/home/ssm-user/boto3_example.py"
+    destination = "/home/ec2-user/boto3_example.py"
   }
 }
 
