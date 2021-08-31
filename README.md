@@ -47,8 +47,6 @@ aws ec2 describe-instances
 
 ## Test forbindelse til din egen testmaskin 
 
-* Naviger til EC2 tjenesten
-
 * Finn EC2 instansen med ditt navn 
 * Kopier EC2 instans ID (i-1234xyz)
 
