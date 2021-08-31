@@ -30,6 +30,16 @@ Bruk Acess key ID og Secret Access Key du har fått i forelesning. Test at du ka
 aws ec2 describe-instances
 ```
 
+Eksempel input kan være slik 
+
+```hcl-terraform
+AWS Access Key ID [****************ITGC]:
+AWS Secret Access Key [****************aY6j]:
+Default region name [eu-north-1]:
+Default output format [json]:
+ glennbech@glenns-mbp-2  ~/dev/01-aws-intro/classroom
+```
+
 ## Logg på AWS console
 
 * Logg på med brukeren du har fått i forelesning 
@@ -80,7 +90,7 @@ aws ec2 describe-instances
 
 ```hcl-terraform
 
-export AWS_REGION=eu-north-1
+export AWS_DEFAULT_REGION=eu-north-1
 sudo su ec2-user
 cd
 pip3 install boto3
