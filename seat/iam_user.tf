@@ -17,26 +17,6 @@ data "aws_iam_policy_document" "instance-assume-role-policy" {
   }
 }
 
-resource "aws_iam_user_policy" "newemp_policy" {
-    name = "${var.student_id}-policy"
-    user = var.student_id
-    policy = <<EOF
-{
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Action": [
-            "ec2:Describe*"
-          ],
-          "Effect": "Allow",
-          "Resource": "*"
-        }
-      ]
-}
-EOF
-}
-
-
 resource "aws_iam_role" "instance_profile" {
   name               = "${var.student_id}-ssm-role"
   managed_policy_arns = ["arn:aws:iam::aws:policy/AmazonSSMFullAccess"]
