@@ -39,7 +39,6 @@ Bruk Acess key ID og Secret Access Key du har fått i forelesning. Test at du ka
 aws ec2 describe-instances
 ```
 
-
 ## Logg på AWS console
 
 * Logg på med brukeren du har fått i forelesning (kristiania) og passord <https://244530008913.signin.aws.amazon.com/console>
