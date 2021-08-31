@@ -23,12 +23,6 @@ Kjør kommandoen
 aws configure
 ```
 
-Bruk Acess key ID og Secret Access Key du har fått i forelesning. Test at du kan akesessere AWS miljøet 
-
-```bash
-aws ec2 describe-instances
-```
-
 Eksempel input kan være slik 
 
 ```hcl-terraform
@@ -37,6 +31,14 @@ AWS Secret Access Key [****************aY6j]:
 Default region name [eu-north-1]:
 Default output format [json]:
 ```
+
+
+Bruk Acess key ID og Secret Access Key du har fått i forelesning. Test at du kan akesessere AWS miljøet 
+
+```bash
+aws ec2 describe-instances
+```
+
 
 ## Logg på AWS console
 
