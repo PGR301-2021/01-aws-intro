@@ -40,7 +40,7 @@ Default output format [json]:
 
 ## Logg på AWS console
 
-* Logg på med brukeren du har fått i forelesning <https://244530008913.signin.aws.amazon.com/console>
+* Logg på med brukeren du har fått i forelesning (kristiania) og passord <https://244530008913.signin.aws.amazon.com/console>
 * Naviger til EC2 tjenesten
 
 ## Test forbindelse til din egen testmaskin 
