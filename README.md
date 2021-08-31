@@ -14,8 +14,7 @@ Etter denne øvelsen vil du være i stand til å
 ## Forbredelser
 
 * Installer AWS CLI på din maskin - <https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html>
-* Installer Session Maanger Plugin for AWS CLI - <https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.htm>
-
+* Installer Session Maanger Plugin for AWS CLI - <https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html>
 ## Konfigurer AWS CLI
 
 Kjør kommandoen 
@@ -37,12 +36,11 @@ AWS Access Key ID [****************ITGC]:
 AWS Secret Access Key [****************aY6j]:
 Default region name [eu-north-1]:
 Default output format [json]:
- glennbech@glenns-mbp-2  ~/dev/01-aws-intro/classroom
 ```
 
 ## Logg på AWS console
 
-* Logg på med brukeren du har fått i forelesning 
+* Logg på med brukeren du har fått i forelesning <https://244530008913.signin.aws.amazon.com/console>
 * Naviger til EC2 tjenesten
 
 ## Test forbindelse til din egen testmaskin 
@@ -68,7 +66,7 @@ maskinen
 aws ec2 describe-instances
 ```
 
-Reflekter litt over hvorfor du dette ikke går bra 
+ Reflekter litt over hvorfor du dette ikke går bra 
 
 
 ## Konfigurer AWS CLI på EC2 Instansen
