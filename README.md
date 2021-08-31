@@ -45,7 +45,6 @@ Default output format [json]:
 
 ## Test forbindelse til din egen testmaskin 
 
-* Logg på med brukeren du har fått i forelesning 
 * Naviger til EC2 tjenesten
 
 * Finn EC2 instansen med ditt navn 
