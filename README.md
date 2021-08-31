@@ -50,7 +50,7 @@ Default output format [json]:
 * Finn EC2 instansen med ditt navn 
 * Kopier EC2 instans ID (i-1234xyz)
 
-Koble det til maskinen med 
+Koble det til maskinen med kommandoen
 
 ```hcl-terraform
 aws ssm start-session --target <instance-id>
@@ -98,7 +98,9 @@ Legg merke til at programmet kjøre med de samme rettigheter som ditt shell.
 
 
 ## bonus: Lek litt med EC2 instansen
-Du kan gjerne forsøke å bytte instanstype på EC2 instansen. Får du lov til det? Forsøk gjerne å 
+
+Logg på AWS Console <https://244530008913.signin.aws.amazon.com/console> og bli kjent med grensesnittet. 
+Du kan for eksempel gjerne forsøke å bytte instanstype på EC2 instansen. Får du lov til det? Forsøk gjerne å 
 
 - Legge merke til IP addressen på instansen 
 - Lage en fil på instansen
