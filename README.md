@@ -72,10 +72,11 @@ aws configure
 ## Test tilganger fra EC2 instansen
 
 ```bash
-ws ec2 describe-instances
+aws ec2 describe-instances
 ```
 
 ## Kjør Python programmet som ligger på maskinen 
+
 
 ```hcl-terraform
 
@@ -88,4 +89,16 @@ python3 boto3_example.py
 
 Legg merke til at programmet kjøre med de samme rettigheter som ditt shell. 
 
+
+## bonus: Lek litt med EC2 instansen
+Du kan gjerne forsøke å bytte instanstype på EC2 instansen. Får du lov til det? Forsøk gjerne å 
+
+- Legge merke til IP addressen på instansen 
+- Lage en fil på instansen
+- Stopp instansen
+- Start instansen 
+- Er filen der? 
+- Er IP addressen den samme? 
+
+Reflekter.
 
